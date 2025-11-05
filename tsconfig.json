@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "target": "es2015",  // Fixed: Removed invalid syntax
+    "lib": ["es2015", "es2017", "dom"],
+    "module": "es2020",
+    "moduleResolution": "node",  // Preserved for Vite
+    "types": ["vite/client"],    // Preserved for Vite
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true    // Already correct
+  }
+}

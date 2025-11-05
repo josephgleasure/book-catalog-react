@@ -1,0 +1,349 @@
+[
+  {
+    "id": 1,
+    "title": "Maison Martin Margiela 20 The Exhibition",
+    "author": "Bob Verhelst, Kaat Debo",
+    "description": "Twenty years of Maison Martin Margiela is examined in this unique retrospective exhibition catalogue. Departing from the traditional idea of presenting a comprehensive overview, the catalogue explores the different themes and concepts that have been present in the Maison's production. This extends to their collections, events, the interior designs of their boutiques and offices, and the unmistakeable approach to their graphics and communication",
+    "isbn": 9789079269006,
+    "publicationYear": 2008,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 2,
+    "title": "NAKAGAWA · SŌCHI 20471120",
+    "author": "Masahiro Nakagawa",
+    "description": "A survey of the work of Masahiro Nakagawa, his fashion label 20471120 founded in 1992 with Lica, and Nakagawa-Sochi, the four-man team of \"recycouture\" fashion artist-designers he established in 1999. Includes: descriptions and photographs of his Tokyo Recycle Projects, #1 through #14; descriptions and illustrations of the characters from his anti-overconsumerism manga, \"Hyoma, Recycle Story;\" an illustrated diagram of the three stages of spiritual cleansing--Viny, Dappi, and Nukegara; brief illustrated descriptions of various other projects; a biography of Lica; chronology of Nakagawa's life; and photographs of the members of Nakagawa-Sochi. Essay by Midori Matsui; photographs by Ai Iwane",
+    "isbn": 9784898151112,
+    "publicationYear": 2004,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 3,
+    "title": "Chrome Hearts Richard Stark Photograph",
+    "author": "Toshiaki Honda, Kesaharu Imai, Teruhiko Doi, & Hiroko Ito",
+    "description": "A Chrome Hearts photography book published by Green Arrow Publications in October 1997 and released in Japan, features an interview with founder, Richard Stark and a hand-written letter by Stark, detailing his life and Chrome Hearts’ early history.",
+    "isbn": 9784766332179,
+    "publicationYear": 1997,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 4,
+    "title": "Comme des Garcons Katsuhiro Otomo for Comme des Garcons DMs",
+    "author": "Katsuhiro Otomo, Comme des Garçons",
+    "description": "Comme des Garçons utilizes direct mailers (DMs) to inform select customers about new collections and in-store events. According to +81, the brand launched its artist-series DMs in 2008, asking one artist each year to allow the brand to reinterpret their body of work in print, a practice that continues today. Due to the nature of these collaborations, the artists chosen, and the relatively limited distribution of the DMs, this printed material has become collectible and, in some cases, highly valuable ephemera.\n\nIn 2013, illustrator Katsuhiro Otomo was selected, and images from Akira, Steamboy, and Domu, amongst other of the artist's works, appeared on 28 individual DMs.",
+    "isbn": "n/a",
+    "publicationYear": 2013,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 5,
+    "title": "Rei Kawakubo and Comme des Garcons",
+    "author": "Deyjan Sudjic, Rei Kawakubo, Comme des Garçons",
+    "description": "By British architecture critic Deyan Sudjic, Rei Kawakubo and Comme des Garçons stands as the first comprehensive monograph on the Japanese avant-garde brand. This book presents an in-depth examination of Comme des Garçons by Sudjic, editor of influential architecture and design magazines such as \"Blueprint\" and \"Domus\" and former director of the Design Museum in London. Through chapters including \"Starting from Zero,\" \"The Making of a Collection,\" \"Building an Empire,\" \"Red is Black,\" and \"Fashion is Design,\" the book explores designer Rei Kawakubo's approach to manufacturing and design, her revolutionary collections, press and commercial strategies, and architectural interiors.\n\nWhat makes this work particularly compelling is Sudjic's architectural perspective on fashion, revealing how Kawakubo created a complete gesamtkunstwerk as a brand. Comme des Garçons does not merely produce clothing but encompasses an entire universe of experience. The book details not only the brand's groundbreaking runway collections but also meticulously designed retail environments and the now-discontinued furniture series that once extended the Comme des Garçons aesthetic into interior spaces. Through biographical material, interviews with key figures, and striking monochrome and color plates, Sudjic articulates how Kawakubo transformed fashion into a comprehensive creative vision that influenced architecture, design, and culture at large.",
+    "isbn": 9780847811960,
+    "publicationYear": 1990,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 6,
+    "title": "Comme des Garcons SIX 1 4",
+    "author": "Comme des Garçons",
+    "description": "In 1988, 15 years after founding Comme des Garçons, Rei Kawakubo launched Six Magazine(1988-1991). A biannual publication, it featured visual elements with only a few bits of writing included. Working with designer Tsuguya Inoue and editor Atsuko Kozasu, Kawakubo published a total of eight issues, each release coinciding with the launch of Comme des Garçons’ latest collection.\n\nAs a part of VISIONAIRE 20, a small booklet featuring an eclectic curation of photos of both clothing and sealife was included. At exactly one quarter the size of the original Six magazine, Six 1/4 can be read as a partial reprisal of the original publication although as always, reintepreted in a new way.",
+    "isbn": "n/a",
+    "publicationYear": 1997,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 7,
+    "title": "Comme des Garcons SIX Number 3",
+    "author": "Comme des Garçons",
+    "description": "In 1988, 15 years after founding Comme des Garçons, Rei Kawakubo launched Six Magazine(1988-1991). A biannual publication, it featured visual elements with only a few bits of writing included. Working with designer Tsuguya Inoue and editor Atsuko Kozasu, Kawakubo published a total of eight issues, each release coinciding with the launch of Comme des Garçons’ latest collection.\n\nThe third issue of Rei Kawakubo's Six magazine. Featuring work fromPeter Lindbergh, Max Vadukul, Luc Dietrich, Richard Dumas, Pierre Boucher, Boyle Family, Fischli and Weiss, Azzedine Alaïa, Timothy Greenfield-Sanders, amongst others.",
+    "isbn": "n/a",
+    "publicationYear": 1989,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 8,
+    "title": "Comme des Garcons SIX Number 4",
+    "author": "Comme des Garçons",
+    "description": "In 1988, 15 years after founding Comme des Garçons, Rei Kawakubo launched Six Magazine(1988-1991). A biannual publication, it featured visual elements with only a few bits of writing included. Working with designer Tsuguya Inoue and editor Atsuko Kozasu, Kawakubo published a total of eight issues, each release coinciding with the launch of Comme des Garçons’ latest collection.\n\nThe fourth issue of Rei Kawakubo's Six magazine. Featuring work from Robert Frank, Arthur Elgort, Josef Koudelka, Saul Leiter, Peter Lindbergh, Mike and Doug Starn, Philip Green, Timothy-Greenfield-Saunders, Minsei Tominaga, Issey Miyake, Lucy Rie, Mimma Barbieri, Martin Harrison, Julien d'Ys, Kazuhiko Motomura, and Mako Yamazaki.",
+    "isbn": "n/a",
+    "publicationYear": 1989,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 9,
+    "title": "Comme des Garcons SIX Number 5",
+    "author": "Comme des Garçons",
+    "description": "In 1988, 15 years after founding Comme des Garçons, Rei Kawakubo launched Six Magazine(1988-1991). A biannual publication, it featured visual elements with only a few bits of writing included. Working with designer Tsuguya Inoue and editor Atsuko Kozasu, Kawakubo published a total of eight issues, each release coinciding with the launch of Comme des Garçons’ latest collection.\n\nThe fifth issue of Rei Kawakubo’s Six magazine. Featuring work from Timothy Greenfield-Sanders, Brian Griffin, Peter Lindbergh, Minsei Tominaga, Steven Meisel, Adrien Chalk, John Lurie, Matthew Jocelyn, John Malkovich, Bern Fry, Spencer Leigh, Julian Sands, Mark Holburn, Christiaan, Enzo Cucchi, Charles Schumann, Antoine Plateau, Line Vautrin, amongst others.",
+    "isbn": "n/a",
+    "publicationYear": 1990,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 10,
+    "title": "Comme des Garcons SIX Number 6",
+    "author": "Comme des Garçons",
+    "description": "In 1988, 15 years after founding Comme des Garçons, Rei Kawakubo launched Six Magazine(1988-1991). A biannual publication, it featured visual elements with only a few bits of writing included. Working with designer Tsuguya Inoue and editor Atsuko Kozasu, Kawakubo published a total of eight issues, each release coinciding with the launch of Comme des Garçons’ latest collection.\n\nThe sixth issue of Rei Kawakubo’s Six magazine. Featuring work from Niko Pirosmani, Brian Griffin, Salvador Dalí, Dino Buzzati, Peter Lindbergh, Kishin Shinoyama, John L. Murphy, amongst others.in",
+    "isbn": "n/a",
+    "publicationYear": 1990,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 11,
+    "title": "Dior Homme by Hedi Slimane for HUGE Magazine",
+    "author": "Hedi Slimane",
+    "description": "HUGE was one of Japan's premier menswear periodicals during its initial publication run from 2003 to 2015. While Director Toru Ukon would later go on to establish Them magazine, he would never quite reach the cultural heights or significance of HUGE. With its first issue published in October 2003, the magazine focused on leading brands of the mid-to-late '00s, including Dior Homme, Undercover, Junya Watanabe MAN, and Number (N)ine. \n\nIn 2006, HUGE featured Hedi Slimane's Autumn/Winter 2006 \"These Grey Days\" Dior Homme collection in a 200+ page special issue. The collection was named after the Eight Legs track that provided the soundtrack for the runway presentation. The magazine offered a comprehensive look into the collection, with pieces presented both in HUGE's trademark catalogue style and through studio and in-situ editorials. The editorials were directed by Slimane, who also contributed photographs and sat down for an interview for the issue.",
+    "isbn": "",
+    "publicationYear": 2006,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 12,
+    "title": "Goros Legend of Harajuku Goros, Volume 1",
+    "author": "Goro's, WORLD PHOTO PRESS",
+    "description": "Through numerous photographs of gorgeously crafted pieces, this book, the first of four, showcases Goro Takahashi's fascination with Native American lore and the image of the Wild West. For more than four decades, he has been hand-crafting accessories such as belts, necklaces, bracelets, bags and medallions, and his eagle and feather designs, learned and honed over many years of living with the Navajo, are highly sought after and only available at Goro's single store in Tokyo. Silver, gold, turquoise, leather and beads are among the materials featured in this storied anthology of outstanding dedication, love and skilled craftsmanship. The book is accompanied by biographical texts and anecdotes.",
+    "isbn": "",
+    "publicationYear": 2012,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 13,
+    "title": "Goros Legend of Harajuku Goros, Volume 2",
+    "author": "Takanori Kurashita",
+    "description": "Through numerous photographs of gorgeously crafted pieces, this book, the second of four, showcases Goro Takahashi's fascination with Native American lore and the image of the Wild West. For more than four decades, he has been hand-crafting accessories such as belts, necklaces, bracelets, bags and medallions, and his eagle and feather designs, learned and honed over many years of living with the Navajo, are highly sought after and only available at Goro's single store in Tokyo. Silver, gold, turquoise, leather and beads are among the materials featured in this storied anthology of outstanding dedication, love and skilled craftsmanship. The book is accompanied by biographical texts and anecdotes.",
+    "isbn": "",
+    "publicationYear": 2015,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 14,
+    "title": "Issey Miyake East Meets West",
+    "author": "Diana Vreeland, Mutsuo Takahashi, Arata Isozaki, Eiko Ishioka, Issey Miyake",
+    "description": "The 1978 publication Issey Miyake: East Meets West stands as a landmark achievement in fashion publishing, being the first monograph dedicated to a living fashion designer. Art directed by Ikko Tanaka, the book presents over 200 pages of full-bleed color imagery that captures Miyake's synthesis of Eastern and Western design philosophies.\nThe publication features editorial photography by renowned photographers including Noriaki Yokosuka, alongside documentation of runway presentations that demonstrate Miyake's revolutionary approach to movement and form.",
+    "isbn": 9784582620016,
+    "publicationYear": 1978,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 15,
+    "title": "Issey Miyake Making Things",
+    "author": "Kazuko Sato, Raymond Meier, Hervé Chandès , Issey Miyake",
+    "description": "When does fashion become \"Design\"? Clues may be found in this exhibition catalog of innovative garments by one of the first Japanese fashion designers to bridge East and West.\nContributor Kazuko Sato surveys the entire course of Miyake's career since the 1960s, while curator Hervé Chandès interviews Miyake about his artistic progress and philosophy. Photographer Raymond Meier presents 50 color photographs from the recent exhibition in Paris.\nDrawing upon traditional Japanese textile techniques and garment construction, Miyake created a new dynamic between the cloth and the body. His innovations include never-before-seen \"industrial cloth\" and pleating reminiscent of Japanese lanterns—twisted, crushed, crumpled, and pressed. Metallic paper heat-pressed onto woven fabric represents only a few of Miyake's highly original ideas. These sculptures served as a departure point for his signature wrapped and layered ready-to-wear clothes.\nReaders may remain puzzled about the \"beauty\" or wearability of many of these garments, but no serious collection on fashion should be without this concise retrospective on one of today's most important designers.",
+    "isbn": 9783908247081,
+    "publicationYear": 1999,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 16,
+    "title": "Issey Miyake Photographs by Irving Penn",
+    "author": "Miyake, Issey, Irving Penn, Nicholas Callaway, Isamu Noguchi, Jay Cocks",
+    "description": "Photographer Irving Penn and Fashion Designer Issey Miyake, had a deep creative understanding of each other's work, having met in 1983. Miyake saw his designs in a new way through Penn's photographs. The images communicated the essence of the work. Through the photographer's lens, the texture, shapes, and forms transcended cloth and transformed into art. To keep an unbiased view, Penn never attended an Issey Miyake fashion show, while Miyake was never present at the photo sittings by Penn. Their collaboration was based on complete creative trust. Edited by Nicholas Calloway, foreword by Isamu Noguchi and an essay by Jay Cocks. Typographic design by Kiyoshi Kanai, and a few words by Isssey Miyake. 46 full-page photographs by Penn.",
+    "isbn": 9780821217207,
+    "publicationYear": 1988,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 17,
+    "title": "Kapital Aloha Brigade Lookbook",
+    "author": "Kiro Hirata, Eric Kvatek",
+    "description": "Cult denim brand Kapital has been producing seasonal catalogs for over the last twenty years. Photographed by long-time collaborator Eric Kvatek, these catalogues are some of the only printed ephemera that exist for the brand, becoming highly sought after and collectible.  Each volume features on-location editorial photos centered around that year's or season's creative theme, reflecting the brand's deep fascination with diverse folk traditions as a source of inspiration and creativity.  \n\n2006's \"Aloha Brigade\" lookbook took Kapital to Hawaii, where their Americana and Native American-inspired designs were recontextualized against a  backdrop of  island still lifes and landscapes depicting contemporary Hawaiian life.",
+    "isbn": "n/a",
+    "publicationYear": 2006,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 18,
+    "title": "Kapital FARMY Lookbook",
+    "author": "Kiro Hirata, Eric Kvatek",
+    "description": "Cult denim brand Kapital has been producing seasonal catalogs for over the last twenty years. Photographed by long-time collaborator Eric Kvatek, these catalogues are some of the only printed ephemera that exist for the brand, becoming highly sought after and collectible.  Each volume features on-location editorial photos centered around that year's or season's creative theme, reflecting the brand's deep fascination with diverse folk traditions as a source of inspiration and creativity.  \n\nAs a portmanteau of the words farm and army, Spring 2011's catalogue set the collection against a backdrop of rural America. Inspired by militaria and Westerns, the collection combined Japanese Americana garments with American flags and stars that resemble the 50 states. Models are shown walking along a flat and empty highway, dubbed DENIM RD, resembling free-spirited hitchhikers. John Deere tractors and rusty muscle cars emphasize the ruggedness of the season's theme.",
+    "isbn": "N/A",
+    "publicationYear": 2011,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 19,
+    "title": "Kapital Fukkin Kountry Lookbook",
+    "author": "Kiro Hirata, Eric Kvatek",
+    "description": "Cult denim brand Kapital has been producing seasonal catalogs for over the last twenty years. Photographed by long-time collaborator Eric Kvatek, these catalogues are some of the only printed ephemera that exist for the brand, becoming highly sought after and collectible.  Each volume features on-location editorial photos centered around that year's or season's creative theme, reflecting the brand's deep fascination with diverse folk traditions as a source of inspiration and creativity.  \n\nTaking inspiration from Kapital's Denim Monster II Lookbook from 2007, Fukkin Kountry explores the not-so-distant past of New York City. The lookbook follows a gang navigating the city's underbelly, engaging in acts of sex and violence dressed in garments from Kapital's Kountry line, including their signature Boro garments. Boro garments draw from the traditional Japanese boro technique, where various fabric patches are layered and stitched together over time, creating richly textured pieces that tell stories through their accumulated repairs and additions. The catalog exemplifies Kapital's tongue-in-cheek attitude and masterfully blends their Japanese and American influences.",
+    "isbn": "N/A",
+    "publicationYear": 2016,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 20,
+    "title": "Maison Martin Margiela Cream Issue 09",
+    "author": "Maison Martin Margiela",
+    "description": "Cream was a lifestyle and design magazine from Hong Kong that was active from at least 2002 to 2008, published by Takara Mak's design collective Silly Thing. Existing in two distinct print runs, the initial concept focused on singular brand or subject profiles, much like Korea's Magazine B today. The first version of the magazine ran for at least 29 issues from 2002 to 2005 as a small-format paperback. The second run, originally called Cream - Summer Edition, was a series of hardcover publications that served as ambitious experiments in printed media and ran for at least nine issues.\nIssue 09 profiled Maison Martin Margiela for the brand's 20th anniversary, and in keeping with the magazine's dedication to material exploration, came packaged in a white box representative of the house's signature color and treatment.",
+    "isbn": "N/A",
+    "publicationYear": 2008,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+      "id": 21,
+    "title": "Number (N)ine SMART Magazine Special",
+    "author": "Takahiro Miyakshita, Hideyuki Takada",
+    "description": "Smart Magazine is a men's fashion magazine that started in the mid-90s by publisher Takarajimasha. Intended as a 'street bible for the new generation', it focuses on Tokyo-based fashion trends with a specific focus on everyday streetwear. Brands like Bape, CDG Shirt, Raf Simons, and others were all covered extensively in the brand's first few years. From its inception, Smart produced additional inserts and special issues focused on a singular brand or category. In 2005, one such special edition was an editorial lookbook focused on Takahiro Miyashita's AW 2005 Number (N)ine collection \"The High Streets\". One of Miyashita's most famous and sought-after collections, the special issue featured in-depth interviews, an item catalogue, and a retrospective of the brand covering 2001-2005. The collection itself drew on music culture, especially grunge, and Native American motifs, producing a hybridized aesthetic that showed up in the clothes as well. Items like Cargo Skirts, Hoodie Blazers, and Denim Track Pants helped establish this aspect of the brand's design language.",
+    "isbn": "N/A",
+    "publicationYear": 2005,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 22,
+    "title": "Raf Simons Redux",
+    "author": "Raf Simons, Peter De Potter, Willy Vanderperre, Collier Schoor, Ronald Stoops",
+    "description": "Published in celebration of Raf Simons tenth anniversary as a contemporary menswear designer. Redux is an extraordinary review into the designer's inspirations, aesthetics and values. Featuring a detailed look at each season up  until 2005, with special contributions by Collier Schorr, Willy Vanderperre, Peter de Potter and Terry Jones among others.",
+    "isbn": 9788881585434,
+    "publicationYear": 2005,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 23,
+    "title": "Raf Simons Virginia Creeper Catalog AW 2002",
+    "author": "Raf Simons, Peter De Potter",
+    "description": "Raf Simons’ seminal Autumn Winter 2002 collection, titled ‘Virginia Creeper,’ is one of the most revered collections of the 21st century. As a powerful representation of his early fashion journey, the show is centered on Simons’ unique approach of storytelling with graphics and typography. With a focus on the Virginia Creeper plant, Simons draws a parallel between humanity and nature. The native North American plant is a fast-growing, dark-green vine that clings to walls and spreads until it occupies an entire space. Simons references this plant with an acid-wash finish applied to the collection’s university-branded sweatshirts & hoodies (the plant contains oxalic acid, a chemical toxic to most mammals). As time goes on, the acid eats away at the garment – just like the Virignia Creeper toxifying its environment.",
+    "isbn": "",
+    "publicationYear": 2002,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 24,
+    "title": "Seditionaries Jun Takahashi and Hiroshi Fujiwara Seditionaries Collection Book",
+    "author": "Jun Takahashi, Hiroshi Fujiwara",
+    "description": "Japanese cultural icon Hiroshi Fujiwara and Jun Takahashi of Undercover created this publication as an ode to Seditionaries. Both designers had personal but very different connections to Seditionaries. With Fujiwara working under Westwood and McLaren during the 80s, and Takahashi being the lead singer of the Tokyo Sex Pistols. Both individuals collected over 350 items of clothing featured in the publication  between the mid-80s and early 90s. The publication has amassed over 350 items. It stands as both a personal archive and a cultural time capsule of punk fashion’s influence in Japan.",
+    "isbn": "",
+    "publicationYear": 2005,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 25,
+    "title": "Takarajima Last Orgy 2, Issues 10-17,23 & Special Edition",
+    "author": "Akio Nakamori, Toshimichi Otsuki",
+    "description": "Last Orgy 2 was, amongst other things, a recurring column serialized in the publication Takarajima (literally, Treasure Island) by Nigo and Jun Takahashi. The two fashion icons would announce store events at their joint ventur Nowhere, showcase new items, and interact candidly with fans through the column. \n\nThese scans capture several editions of Last Orgy 2, and have bee accompanied by English translations of the text.",
+    "isbn": "",
+    "publicationYear": 1993,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 26,
+    "title": "Undercover Cream Spring Edition Issue 04",
+    "author": "Jun Takahashi",
+    "description": "Cream was a lifestyle and design magazine from Hong Kong that was active from at least 2002 to 2008, published by Takara Mak's design collective Silly Thing. Existing in two distinct print runs, the initial concept focused on singular brand or subject profiles, much like Korea's Magazine B today. The first version of the magazine ran for at least 29 issues from 2002 to 2005 as a small-format paperback. The second run, originally called Cream - Summer Edition, was a series of hardcover publications that served as ambitious experiments in printed media and ran for at least nine issues.\nIssue 04 was a special monograph on Jun Takahashi's SS2006 Collection \"T\". The format of the book roughly follows the chonrology of the designers seasonal notebook and includes concept sketches, material and trim information alongside runway photography, graphic design explorations, an interview and prints by longtime Undercover collaborator Madsaki.",
+    "isbn": "",
+    "publicationYear": 2006,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 27,
+    "title": "Undercover Exchange Booklet",
+    "author": "Jun Takahashi",
+    "description": "This 1998 collection from Jun Takahashi is a fan favorite for many Undercover archive enthusiasts. Exchange, also referred to as Small Parts, was centered around one creative concept that repeats itself in almost every garment of the collection: the addition of removable sections through zipping and unzipping. This feature allowed people to combine or subtract pieces, and wear the garments in an assortment of ways. It also allowed them to purchase other pieces from Small Parts in order to further accessorize the looks. Essentially you could take your sleeves, collar, hood, etc. from one piece and then zip it directly to another piece.\nThe collection booklet displays some background details on Jun’s process for the collection as well as imagery and descriptions on how to customize your Undercover Small Parts garments. Jun's collection booklet features designs done in collaboration with New York graffiti artist Futura 2000. Futura’s 'Pointman' figures are drawn wearing different pieces of clothing from the collection",
+    "isbn": "",
+    "publicationYear": 1998,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 28,
+    "title": "Undercover Labyrinth of Undercover",
+    "author": "Jun Takahashi, Yasayuki Takae, Motokai Hori",
+    "description": "In 2015, Undercover designer Jun Takahashi launched a retrospective exhibition in commemoration of his brand’s 25th anniversary. The exhibition went into great detail on the cult brand’s history and designs, from the early days being stocked in Ura-Harajuku’s NOWHERE store, to an expansive selection of runway looks and designs surrounding the brand’s unique vision. Labyrinth of Undercover was released alongside this exhibition, featuring select looks from all of Undercover’s runway shows, from 1994 to 2015. In addition to the runway looks is also a full list of collections with descriptions of the corresponding themes and meanings. The book eloquently serves as a time capsule through which readers can grasp a substantial understanding of the cult brand's legacy from the 90s to the modern day.",
+    "isbn": "",
+    "publicationYear": 2015,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 29,
+    "title": "Undercover SS2003 Scab Runway Looks",
+    "author": "Jun Takahashi",
+    "description": "From US Vogue’s Contributing Editor Sarah Mower: \n\n“I saw Undercover’s first show in Paris in 2002 and I will never forget the feeling of what it was like to see burquas as a finale. It was just after 9/11, and you have to remember how we were all scared stiff, depressed, sorrowing – and, in fashion circles, not talking about it. So when those multicolored burquas appeared, it was a complete and utter surprise: here was a new young designer, from Japan, unknown in the west, who was brave enough to be hinting at a subject no-one else dared to look at. It didn’t feel like he was trying to court controversy, or be shocking for the sake of it, though. There was something just coming from a completely fresh, non-aggressive viewpoint. There was something gentle, something odd and mysterious about it.”",
+    "isbn": "",
+    "publicationYear": 2003,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 30,
+    "title": "VISIONAIRE 20 COMME DES GARÇONS",
+    "author": "Rei Kawakubo, Mario Sorrenti, Nick Knight, Philip-Lorca diCorcia",
+    "description": "In 2000,  Visionaire welcomed Rei Kawakubo as its first guest editor, creating 20 COMME DES GARÇONS. Kawakubo opened her archives and selected her favorite pieces for a group of photographers to reinterpret. Among them was a young Mario Sorrenti, then twenty-six years old, who brought a fresh perspective to designs dating back as far as 1982—when he had been only eleven. Philip-Lorca diCorcia, contributing for the first time, took a Comme des Garçons dress into the bustling streets of Hong Kong. Nick Knight blended Comme with Alexander McQueen, creating one of the most reproduced Visionaire images to date. The issue also included a real dress pattern printed on muslin, packaged inside.",
+    "isbn": 9789997598288,
+    "publicationYear": 1997,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 31,
+    "title": "Walter Van Beirendonck Mutilate",
+    "author": "Walter Van Beirendonck, Cornelia Lauf",
+    "description": "Mutilate documents 12 years of Belgian designer Walter Van Beirendonck's wild, bold, playful, and salacious approach to fashion across both women's and men's collections, often incorporating subversive and challenging elements. It showcases a curated selection of photography by Jean-Baptiste Mondino, Juergen Teller, and Carel Fonteyne, alongside fun collages. It is not to be confused with an autobiography but rather \"a kaleidoscope of images and words that mark(ed) my world.\"\n\nA vibrant, image-rich book created by Beirendonck and Cornelia Lauf, this interactive piece features die-cutting, fold-out plates, embossing, pop-ups, mirrors, and two functional zippers on the cover. Although short, spanning only 86 pages, the book delivers a visual punch in line with Beirendonck's usual aesthetic. Out with the old and in with the new—because even if the book evokes a hint of nostalgia, it is meant to inspire action, encourage moving forward, and kiss the future!",
+    "isbn": 9789072191816,
+    "publicationYear": 1997,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 32,
+    "title": "Yohji Yamamoto Lookbook AW 1995",
+    "author": "Yohji Yamamoto, David Sims, Marc Ascoli",
+    "description": "Yohji Yamamoto’s Fall-Winter 1995 collection was a captivating blend of Japanese aesthetics and avant-garde design. Inspired by the concept of “vanitas,” which explores the transience of life, Yamamoto infused his pieces with symbolism. The collection featured elegantly draped coats and loungewear pyjamas, emphasizing asymmetry and “organized disequilibrium.” Notably, Yamamoto incorporated skull motifs, echoing the theme of mortality and impermanence. These skulls adorned the designs, creating a powerful visual impact that challenged conventional notions of beauty and elegance. Additionally, in previous seasons, Yamamoto had experimented with unexpected forms, such as top hats inspired by “marionettes,” further showcasing his innovative approach to fashion.",
+    "isbn": "",
+    "publicationYear": 1995,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 33,
+    "title": "Yohji Yamamoto My Dear Bomb",
+    "author": "Yohji Yamamoto, Ai Mitsuda",
+    "description": "Yohji Yamamoto led the Japanese fashion wave of the 1980s and 1990s into the new millennium. In October 2009, after a series of bad investments, Yamamoto Inc. went bankrupt; by the end of that year the designer had inaugurated a new business and a complete reevaluation of his direction. My Dear Bomb is an outcome of this transition moment. Coauthored with Ai Mitsuda, this carefully and beautifully written autobiography (with biographical interpolations by friends and collaborators) seamlessly combines extended meditations on clothing and life with Yamamoto's memories and anecdotes, in short, concise paragraphs. Throughout its pages, we encounter Yamamoto as a tough realist unburdened by disingenuousness (\"I am, in fact, a man who may turn heartless in an instant; I desire only to settle each and every score immediately\"); and, of course, as a great designer blessed with unerring instinct for his materials (\"how does the cloth want to drape, to sway, to fall? If one keeps these things in mind and looks very carefully, the fabric itself begins to speak\"). Illustrated with drawings by Yamamoto, this open-hearted meditation offers a take on the autobiography form as imaginative as the designer's fashion wear.",
+    "isbn": 9789055449798,
+    "publicationYear": 2011,
+    "images": "src/assets/book images/{TITLE}/*.{jpg,png,webp}"
+  },
+  {
+    "id": 34,
+    "title": "Coming Soon",
+    "author": "Unknown",
+    "description": "This book will be added to the collection soon!",
+    "images": "src/assets/book images/fallback.jpg"
+  },
+  {
+    "id": 35,
+    "title": "Coming Soon",
+    "author": "Unknown",
+    "description": "This book will be added to the collection soon!",
+    "images": "src/assets/book images/fallback.jpg"
+  },
+  {
+    "id": 36,
+    "title": "Coming Soon",
+    "author": "Unknown",
+    "description": "This book will be added to the collection soon!",
+    "images": "src/assets/book images/fallback.jpg"
+  },
+  {
+    "id": 37,
+    "title": "Coming Soon",
+    "author": "Unknown",
+    "description": "This book will be added to the collection soon!",
+    "images": "src/assets/book images/fallback.jpg"
+  },
+  {
+    "id": 38,
+    "title": "Coming Soon",
+    "author": "Unknown",
+    "description": "This book will be added to the collection soon!",
+    "images": "src/assets/book images/fallback.jpg"
+  },
+  {
+    "id": 39,
+    "title": "Coming Soon",
+    "author": "Unknown",
+    "description": "This book will be added to the collection soon!",
+    "images": "src/assets/book images/fallback.jpg"
+  },
+  {
+    "id": 40,
+    "title": "Coming Soon",
+    "author": "Unknown",
+    "description": "This book will be added to the collection soon!",
+    "images": "src/assets/book images/fallback.jpg"
+  }
+
+]
