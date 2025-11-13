@@ -96,21 +96,20 @@ async function buildFromCloudinary(books) {
   // Allow the caller to control the top-level folder prefix in Cloudinary.
   // Defaults to "book images/". If your Cloudinary has "book-images/book images/",
   // set CLOUDINARY_BASE_PREFIX="book-images/book images/"
-  const BASE_PREFIX = (process.env.CLOUDINARY_BASE_PREFIX || 'book images/').replace(/\/?$/, '/');
+  const BASE_PREFIX = (process.env.CLOUDINARY_BASE_PREFIX || 'book images').replace(/\/+$/, '');
 
-  async function listAllByPrefix(prefix) {
-    // Paginated listing
-    let nextCursor = undefined;
+  async function listByFolder(folderFullPath) {
+    // Use Search API to find assets in the folder; this works even when folder is not part of public_id.
+    const expression = `folder='${folderFullPath}'`;
     const publicIds = [];
+    let nextCursor = undefined;
     do {
-      const res = await cloudinary.api.resources({
-        type: 'upload',
-        prefix,
-        max_results: 500,
-        next_cursor: nextCursor,
-      });
-      for (const r of res.resources) {
-        // Cloudinary public_id has no extension
+      const res = await cloudinary.search
+        .expression(expression)
+        .max_results(500)
+        .next_cursor(nextCursor)
+        .execute();
+      for (const r of (res.resources || [])) {
         publicIds.push(r.public_id);
       }
       nextCursor = res.next_cursor;
@@ -118,24 +117,20 @@ async function buildFromCloudinary(books) {
     return publicIds;
   }
 
+  // Removed heuristic search; we will rely on folder-based search only.
+
   const manifest = {};
   for (const book of books) {
     const title = book.title;
-    // We expect folders like "<BASE_PREFIX><title>/"
-    const prefix = `${BASE_PREFIX}${title}/`;
-    const ids = await listAllByPrefix(prefix);
+    // We expect Cloudinary folder like "<BASE_PREFIX>/<title>"
+    const folderPath = `${BASE_PREFIX}/${title}`;
+    const ids = await listByFolder(folderPath);
     if (ids.length) {
       manifest[title] = { publicIds: sortByNumericSuffix(ids) };
       continue;
     }
-    // Fallback: search for any folder path that contains "/<title>/" by listing the parent
-    // This is a conservative fallback; if the primary prefix failed due to nesting differences.
-    const parentPrefix = BASE_PREFIX;
-    const broad = await listAllByPrefix(parentPrefix);
-    const filtered = broad.filter(id => id.includes(`/${title}/`));
-    if (filtered.length) {
-      manifest[title] = { publicIds: sortByNumericSuffix(filtered) };
-    }
+
+    // If nothing found, leave the title absent in the manifest.
   }
   return manifest;
 }
