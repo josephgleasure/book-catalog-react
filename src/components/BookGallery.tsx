@@ -27,7 +27,16 @@ const BookGallery: React.FC<BookGalleryProps> = ({ bookTitle, currentIndex, onIn
       const pageWidth = typeof window !== 'undefined' && window.innerWidth <= 768
         ? 600  // mobile transform width
         : 800; // desktop transform width
-      const urls = manifestEntry.publicIds.map(id =>
+
+      // Safety: only keep assets that clearly belong to this title (folder contains the title segment)
+      const belongingIds = manifestEntry.publicIds.filter((id) => {
+        const decoded = decodeURIComponent(id);
+        return decoded.includes(`/${bookTitle}/`);
+      });
+
+      const sourceIds = belongingIds.length > 0 ? belongingIds : manifestEntry.publicIds;
+
+      const urls = sourceIds.map(id =>
         getCloudinaryUrl(id, { width: pageWidth })
       );
       setImagePaths(urls);
