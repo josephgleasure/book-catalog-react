@@ -25,8 +25,8 @@ const BookGallery: React.FC<BookGalleryProps> = ({ bookTitle, currentIndex, onIn
     const manifestEntry = (imageManifest as Record<string, { publicIds: string[] }>)[bookTitle];
     if (manifestEntry && Array.isArray(manifestEntry.publicIds) && manifestEntry.publicIds.length > 0) {
       const pageWidth = typeof window !== 'undefined' && window.innerWidth <= 768
-        ? 900
-        : 1200;
+        ? 600  // mobile transform width
+        : 800; // desktop transform width
       const urls = manifestEntry.publicIds.map(id =>
         getCloudinaryUrl(id, { width: pageWidth })
       );

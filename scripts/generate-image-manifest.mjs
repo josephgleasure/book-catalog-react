@@ -93,6 +93,11 @@ async function buildFromCloudinary(books) {
     secure: true,
   });
 
+  // Allow the caller to control the top-level folder prefix in Cloudinary.
+  // Defaults to "book images/". If your Cloudinary has "book-images/book images/",
+  // set CLOUDINARY_BASE_PREFIX="book-images/book images/"
+  const BASE_PREFIX = (process.env.CLOUDINARY_BASE_PREFIX || 'book images/').replace(/\/?$/, '/');
+
   async function listAllByPrefix(prefix) {
     // Paginated listing
     let nextCursor = undefined;
@@ -116,8 +121,8 @@ async function buildFromCloudinary(books) {
   const manifest = {};
   for (const book of books) {
     const title = book.title;
-    // We expect folders like "book images/<...>/<title>/"
-    const prefix = `book images/${title}/`;
+    // We expect folders like "<BASE_PREFIX><title>/"
+    const prefix = `${BASE_PREFIX}${title}/`;
     const ids = await listAllByPrefix(prefix);
     if (ids.length) {
       manifest[title] = { publicIds: sortByNumericSuffix(ids) };
@@ -125,7 +130,7 @@ async function buildFromCloudinary(books) {
     }
     // Fallback: search for any folder path that contains "/<title>/" by listing the parent
     // This is a conservative fallback; if the primary prefix failed due to nesting differences.
-    const parentPrefix = `book images/`;
+    const parentPrefix = BASE_PREFIX;
     const broad = await listAllByPrefix(parentPrefix);
     const filtered = broad.filter(id => id.includes(`/${title}/`));
     if (filtered.length) {

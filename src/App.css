@@ -450,7 +450,7 @@ body {
 .gallery-page {
   max-height: 80vh;
   width: 45vw;
-  max-width: 400px;
+  max-width: 320px;
   object-fit: contain;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
