@@ -103,12 +103,18 @@ const BookGallery: React.FC<BookGalleryProps> = ({ bookTitle, currentIndex, onIn
             src={imagePaths[currentIndex]}
             className="gallery-page left-page"
             alt={`${bookTitle} - Page ${currentIndex + 1}`}
+            loading="lazy"
+            width={600}
+            height={800}
           />
           {!isSinglePage && currentIndex + 1 < imagePaths.length && (
             <img
               src={imagePaths[currentIndex + 1]}
               className="gallery-page right-page"
               alt={`${bookTitle} - Page ${currentIndex + 2}`}
+              loading="lazy"
+              width={600}
+              height={800}
             />
           )}
         </div>
@@ -138,6 +144,9 @@ const BookGallery: React.FC<BookGalleryProps> = ({ bookTitle, currentIndex, onIn
               className={`thumbnail ${(idx === currentIndex || idx === currentIndex + 1) ? 'active' : ''}`}
               onClick={() => onIndexChange(idx)}
               alt={`${bookTitle} - Thumbnail ${idx + 1}`}
+              loading="lazy"
+              width={120}
+              height={160}
             />
           ))}
         </div>
