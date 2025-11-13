@@ -27,9 +27,11 @@ const BookGallery: React.FC<BookGalleryProps> = ({ bookTitle, currentIndex, onIn
       const pageWidth = typeof window !== 'undefined' && window.innerWidth <= 768
         ? 600  // mobile transform width
         : 800; // desktop transform width
-      const urls = manifestEntry.publicIds.map(id =>
-        getCloudinaryUrl(id, { width: pageWidth })
-      );
+      const urls = manifestEntry.publicIds.map(id => {
+        // If manifest was generated from local folders, it may miss the outer "book-images/".
+        const normalizedId = id.startsWith('book images/') ? `book-images/${id}` : id;
+        return getCloudinaryUrl(normalizedId, { width: pageWidth });
+      });
       setImagePaths(urls);
       return;
     }
