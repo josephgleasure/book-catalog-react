@@ -1,4 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
+import getCloudinaryUrl from '../utils/cloudinary';
+// Import the generated manifest (title -> { publicIds: string[] })
+// Each publicId is a Cloudinary public_id like "book images/<Title>/<fileBase>"
+// with no extension.
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore - allow JSON import without explicit types
+import imageManifest from '../data/image-manifest.json';
 
 interface BookGalleryProps {
   bookTitle: string;
@@ -13,13 +20,25 @@ const BookGallery: React.FC<BookGalleryProps> = ({ bookTitle, currentIndex, onIn
   const [showThumbnails, setShowThumbnails] = useState<boolean>(false);
   const galleryRef = useRef<HTMLDivElement>(null);
 
-  // Load images
+  // Load images - prefer Cloudinary manifest; fallback to local scan during migration
   useEffect(() => {
+    const manifestEntry = (imageManifest as Record<string, { publicIds: string[] }>)[bookTitle];
+    if (manifestEntry && Array.isArray(manifestEntry.publicIds) && manifestEntry.publicIds.length > 0) {
+      const pageWidth = typeof window !== 'undefined' && window.innerWidth <= 768
+        ? 900
+        : 1200;
+      const urls = manifestEntry.publicIds.map(id =>
+        getCloudinaryUrl(id, { width: pageWidth })
+      );
+      setImagePaths(urls);
+      return;
+    }
+
+    // Fallback: local glob (dev/migration only)
     const allImages = import.meta.glob(
       '/src/assets/book images/**/*.{jpg,png,webp}',
       { eager: true, as: 'url' }
     );
-
     const filteredPaths = Object.entries(allImages)
       .filter(([path]) => path.includes(`/${bookTitle}/`))
       .map(([, url]) => url as string)
@@ -28,7 +47,6 @@ const BookGallery: React.FC<BookGalleryProps> = ({ bookTitle, currentIndex, onIn
         const numB = parseInt(b.match(/\((\d+)\)/)?.[1] || '0');
         return numA - numB;
       });
-
     setImagePaths(filteredPaths);
   }, [bookTitle]);
 

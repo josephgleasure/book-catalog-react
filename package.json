@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:manifest": "node scripts/generate-image-manifest.mjs"
   },
   "dependencies": {
     "fs": "^0.0.1-security",

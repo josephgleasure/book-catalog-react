@@ -56,8 +56,8 @@ const Downloads = () => {
         name: 'Japanese Magazine Archive',
         description: 'The Japanese Magazine Google Drive folder that has been floating around the internet for the last few years. Popeye and Go Out issues have been removed and resorted.',
         size: '13.7 GB - Multiple Formats',
-        driveUrl: 'https://archive.org/details/jpmagazine-archive-001-fixed'
-      },
+        driveUrl: 'https://drive.google.com/drive/folders/0B0jc0NJQ4qefcXdpS3hoNjlySjg?resourcekey=0-2ZsYev2oUDgKMs06qHr6uQ', 
+   }, 
       {
         name: 'Partial & Rough Scans',
         description: 'Hodge podge of various scans from over the years, not organized.',
@@ -66,7 +66,7 @@ const Downloads = () => {
       },
       {
         name: 'POPEYE',
-        description: 'All of the digital research resources for the Levis ICD+ article',
+        description: 'Scans of the iconic magazine for City Boys',
         size: '2.43 GB - Multiple Formats',
         driveUrl: 'https://archive.org/details/popeye-archive'
       },

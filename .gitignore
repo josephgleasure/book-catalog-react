@@ -23,5 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 # Custom project ignores
-src/assets/book images/
 **/Old versions/
