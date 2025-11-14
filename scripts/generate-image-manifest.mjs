@@ -98,17 +98,17 @@ async function buildFromCloudinary(books) {
   // set CLOUDINARY_BASE_PREFIX="book-images/book images/"
   const BASE_PREFIX = (process.env.CLOUDINARY_BASE_PREFIX || 'book images').replace(/\/+$/, '');
 
-  async function listByFolder(folderFullPath) {
-    // Use Search API to find assets in the folder; this works even when folder is not part of public_id.
-    const expression = `folder='${folderFullPath}'`;
+  async function listByPrefix(prefix) {
+    // Reliable listing by public_id prefix, which matches Cloudinary folder path for clean uploads
     const publicIds = [];
     let nextCursor = undefined;
     do {
-      const res = await cloudinary.search
-        .expression(expression)
-        .max_results(500)
-        .next_cursor(nextCursor)
-        .execute();
+      const res = await cloudinary.api.resources({
+        type: 'upload',
+        prefix,
+        max_results: 500,
+        next_cursor: nextCursor,
+      });
       for (const r of (res.resources || [])) {
         publicIds.push(r.public_id);
       }
@@ -192,8 +192,9 @@ async function buildFromCloudinary(books) {
     if (!matchedFolder) {
       continue;
     }
-    const folderPath = matchedFolder; // matchedFolder already includes full path
-    const ids = await listByFolder(folderPath);
+    const folderPath = matchedFolder; // matchedFolder already includes full path, e.g. "books/<Title>"
+    const prefix = `${folderPath}/`;  // ensure we only pull assets under this folder
+    const ids = await listByPrefix(prefix);
     if (ids.length) {
       manifest[title] = { publicIds: sortByNumericSuffix(ids) };
       continue;
