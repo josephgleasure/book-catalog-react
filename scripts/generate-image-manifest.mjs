@@ -117,13 +117,82 @@ async function buildFromCloudinary(books) {
     return publicIds;
   }
 
-  // Removed heuristic search; we will rely on folder-based search only.
+  // Build folder name matcher tolerant of punctuation/diacritics differences
+  function normalizeName(name) {
+    return name
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '') // strip diacritics
+      .replace(/&/g, 'and')
+      .replace(/[^a-zA-Z0-9]+/g, ' ') // collapse punctuation to space
+      .trim()
+      .replace(/\s+/g, ' ')
+      .toLowerCase();
+  }
+
+  async function getFolderNameMap() {
+    const nameToFullPath = new Map();
+
+    // Try both possible base prefixes
+    const baseCandidates = [BASE_PREFIX, `book-images/${BASE_PREFIX}`];
+
+    // BFS traversal of subfolder tree
+    async function listSubfolders(prefix) {
+      const results = [];
+      let nextCursor;
+      do {
+        const res = await cloudinary.api.sub_folders(prefix, { next_cursor: nextCursor });
+        for (const f of (res.folders || [])) {
+          results.push(`${prefix}/${f.name}`);
+        }
+        nextCursor = res.next_cursor;
+      } while (nextCursor);
+      return results;
+    }
+
+    for (const candidate of baseCandidates) {
+      try {
+        const queue = [candidate];
+        const discovered = new Set([candidate]);
+        // Set resolved candidate if this base exists
+        resolvedBasePrefix = candidate;
+
+        while (queue.length) {
+          const current = queue.shift();
+          const children = await listSubfolders(current);
+          for (const child of children) {
+            if (!discovered.has(child)) {
+              discovered.add(child);
+              queue.push(child);
+              // Map leaf folder name (last segment) to full path
+              const leaf = child.split('/').pop();
+              nameToFullPath.set(normalizeName(leaf), child);
+            }
+          }
+        }
+
+        if (nameToFullPath.size > 0) break;
+      } catch {
+        // try next candidate
+      }
+    }
+
+    return nameToFullPath;
+  }
+
+  // resolved base prefix to use in listByFolder calls; default to BASE_PREFIX
+  let resolvedBasePrefix = BASE_PREFIX;
 
   const manifest = {};
+  const folderNameMap = await getFolderNameMap();
   for (const book of books) {
     const title = book.title;
-    // We expect Cloudinary folder like "<BASE_PREFIX>/<title>"
-    const folderPath = `${BASE_PREFIX}/${title}`;
+    // Find the best matching folder under BASE_PREFIX by normalized name
+    const normalizedTitle = normalizeName(title);
+    const matchedFolder = folderNameMap.get(normalizeName(title));
+    if (!matchedFolder) {
+      continue;
+    }
+    const folderPath = matchedFolder; // matchedFolder already includes full path
     const ids = await listByFolder(folderPath);
     if (ids.length) {
       manifest[title] = { publicIds: sortByNumericSuffix(ids) };
