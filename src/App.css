@@ -445,12 +445,12 @@ body {
   overflow: hidden;
   position: relative;
   align-items: center;
-  max-height: 72vh; /* clamp spread height to avoid overly tall container */
+  max-height: 62vh; /* reduce overall container height */
 }
 
 /* Page Images */
 .gallery-page {
-  max-height: 70vh;
+  max-height: 60vh; /* reduce page image height */
   width: 45vw;
   max-width: 320px;
   object-fit: contain;

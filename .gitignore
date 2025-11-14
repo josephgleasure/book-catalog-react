@@ -1,3 +1,13 @@
+dist/
+
+# Exclude large local image sources from repo (dev-only assets)
+src/assets/book images/**
+
+# Node/Vite
+node_modules/
+.DS_Store
+*.log
+
 # Logs
 logs
 *.log

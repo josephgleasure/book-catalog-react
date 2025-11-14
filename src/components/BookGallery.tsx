@@ -43,20 +43,24 @@ const BookGallery: React.FC<BookGalleryProps> = ({ bookTitle, currentIndex, onIn
       return;
     }
 
-    // Fallback: local glob (dev/migration only)
-    const allImages = import.meta.glob(
-      '/src/assets/book images/**/*.{jpg,png,webp}',
-      { eager: true, as: 'url' }
-    );
-    const filteredPaths = Object.entries(allImages)
-      .filter(([path]) => path.includes(`/${bookTitle}/`))
-      .map(([, url]) => url as string)
-      .sort((a, b) => {
-        const numA = parseInt(a.match(/\((\d+)\)/)?.[1] || '0');
-        const numB = parseInt(b.match(/\((\d+)\)/)?.[1] || '0');
-        return numA - numB;
-      });
-    setImagePaths(filteredPaths);
+    // Fallback: local glob (dev-only). Wrapped in DEV check so production builds don't bundle these assets.
+    if (import.meta.env.DEV) {
+      const allImages = import.meta.glob(
+        '/src/assets/book images/**/*.{jpg,png,webp}',
+        { eager: true, as: 'url' }
+      );
+      const filteredPaths = Object.entries(allImages)
+        .filter(([path]) => path.includes(`/${bookTitle}/`))
+        .map(([, url]) => url as string)
+        .sort((a, b) => {
+          const numA = parseInt(a.match(/\((\d+)\)/)?.[1] || '0');
+          const numB = parseInt(b.match(/\((\d+)\)/)?.[1] || '0');
+          return numA - numB;
+        });
+      setImagePaths(filteredPaths);
+    } else {
+      setImagePaths([]);
+    }
   }, [bookTitle]);
 
   // Handle responsive single-page mode
