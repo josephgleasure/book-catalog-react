@@ -117,6 +117,24 @@ async function buildFromCloudinary(books) {
     return publicIds;
   }
 
+  async function searchByPublicIdSeed(seed) {
+    // Fallback using Search API when folder path and public_id diacritics differ
+    const publicIds = [];
+    let nextCursor = undefined;
+    do {
+      const res = await cloudinary.search
+        .expression(`public_id:${seed}*`)
+        .max_results(500)
+        .next_cursor(nextCursor)
+        .execute();
+      for (const r of (res.resources || [])) {
+        publicIds.push(r.public_id);
+      }
+      nextCursor = res.next_cursor;
+    } while (nextCursor);
+    return publicIds;
+  }
+
   // Build folder name matcher tolerant of punctuation/diacritics differences
   function normalizeName(name) {
     return name
@@ -194,7 +212,19 @@ async function buildFromCloudinary(books) {
     }
     const folderPath = matchedFolder; // matchedFolder already includes full path, e.g. "books/<Title>"
     const prefix = `${folderPath}/`;  // ensure we only pull assets under this folder
-    const ids = await listByPrefix(prefix);
+    let ids = await listByPrefix(prefix);
+    if (!ids.length) {
+      // Fallback: search by a stable ASCII seed from the title to handle diacritic mismatches in folder vs public_id
+      const asciiTitle = title
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-zA-Z0-9]+/g, ' ')
+        .trim();
+      const seed = asciiTitle.split(' ')[0]; // e.g., "NAKAGAWA"
+      if (seed) {
+        ids = await searchByPublicIdSeed(`${resolvedBasePrefix}/${seed}`);
+      }
+    }
     if (ids.length) {
       manifest[title] = { publicIds: sortByNumericSuffix(ids) };
       continue;
