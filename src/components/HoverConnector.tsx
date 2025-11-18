@@ -11,6 +11,11 @@ export interface ConnectorProps {
   visible: boolean;
   /** Multiply the snapped 45° direction by +1 or -1 to reverse angle */
   angleSign?: 1 | -1;
+  /** Leave a small gap before the label edge */
+  terminalGap?: number;
+  /** Clamp the elbow x-position into a viewport lane (e.g., 60–64%) */
+  laneMinPercent?: number; // e.g., 60
+  laneMaxPercent?: number; // e.g., 64
 }
 
 /**
@@ -27,6 +32,9 @@ const HoverConnector: React.FC<ConnectorProps> = ({
   snapToIso45 = true,
   visible,
   angleSign = 1,
+  terminalGap = 10,
+  laneMinPercent = 60,
+  laneMaxPercent = 64,
 }) => {
   const [points, setPoints] = useState<[number, number, number, number, number, number] | null>(null);
   const rafRef = useRef<number | null>(null);
@@ -44,21 +52,31 @@ const HoverConnector: React.FC<ConnectorProps> = ({
 
       const sx = tr.left + tr.width / 2;
       const sy = tr.top + tr.height / 2;
-      const ex = side === 'right' ? lr.left : lr.right;
+      const ex = side === 'right' ? lr.left - terminalGap : lr.right + terminalGap;
       const ey = lr.top + lr.height / 2;
 
       let kx: number;
       let ky = ey;
+      // Determine desired lane in viewport coords
+      const laneMinX = (window.innerWidth * laneMinPercent) / 100;
+      const laneMaxX = (window.innerWidth * laneMaxPercent) / 100;
+
+      // Choose a candidate for kx
+      let kxCandidate: number;
       if (snapToIso45) {
         const deltaY = ey - sy;
-        const kxCandidate = sx + angleSign * sideSign * Math.abs(deltaY);
-        if (side === 'right') {
-          kx = Math.min(kxCandidate, ex - elbowGap);
-        } else {
-          kx = Math.max(kxCandidate, ex + elbowGap);
-        }
+        kxCandidate = sx + angleSign * sideSign * Math.abs(deltaY);
       } else {
-        kx = ex - sideSign * elbowGap;
+        kxCandidate = ex - sideSign * elbowGap;
+      }
+
+      // Clamp the elbow into the lane and respect elbowGap vs end
+      if (side === 'right') {
+        const clamped = Math.min(Math.max(kxCandidate, laneMinX), laneMaxX);
+        kx = Math.min(clamped, ex - Math.max(6, elbowGap * 0.5));
+      } else {
+        const clamped = Math.min(Math.max(kxCandidate, window.innerWidth - laneMaxX), window.innerWidth - laneMinX);
+        kx = Math.max(clamped, ex + Math.max(6, elbowGap * 0.5));
       }
       setPoints([sx, sy, kx, ky, ex, ey]);
     };

@@ -276,11 +276,14 @@ const App: React.FC = () => {
                 tileEl={hoveredDetail?.el ?? null}
                 labelEl={labelBoxRef.current}
                 side="right"
-                elbowGap={32}
+                elbowGap={28}
                 color="#111"
                 width={2}
-                snapToIso45={true}
+                snapToIso45={false}
                 angleSign={-1}
+                terminalGap={10}
+                laneMinPercent={50}
+                laneMaxPercent={64}
                 visible={!!hoveredDetail && !isMobile}
               />
             </div>
