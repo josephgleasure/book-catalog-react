@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo, useEffect, useRef } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
@@ -10,6 +10,8 @@ import BookPopup from './components/BookPopup'
 import books from './data/books.json';
 import AboutPage from './components/AboutPage';
 import Downloads from './components/Downloads';
+import HoverNameDisplay from './components/HoverNameDisplay';
+import HoverConnector from './components/HoverConnector';
 
 // Create a map of stamp IDs to book titles
 const bookTitleMap: Record<number, string> = {};
@@ -144,9 +146,17 @@ const App: React.FC = () => {
   console.log("App component rendered"); // Earliest possible log in the component function body
   const [search, setSearch] = useState('')
   const [hoveredStampId, setHoveredStampId] = useState<number | null>(null)
+  const [hoveredDetail, setHoveredDetail] = useState<{ id: number; el: HTMLElement } | null>(null)
   const [key, setKey] = useState(0); // Add a key state
   const [gridVisibleHeight, setGridVisibleHeight] = useState(0);
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const labelBoxRef = useRef<HTMLDivElement | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(() => typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
+  useEffect(() => {
+    const onResize = () => setIsMobile(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   // Filter stamps for sidebar
   const allStamps = useMemo(() => getAllStamps(initialGridCellsData), [])
@@ -247,10 +257,32 @@ const App: React.FC = () => {
                   rowStartingColOffsets={rowStartingColOffsets}
                   hoveredStampId={hoveredStampId}
                   onStampHover={setHoveredStampId}
+                  onCellHover={setHoveredDetail}
                   onHeightCalculated={setGridVisibleHeight}
                   onStampClick={handleStampClick}
                 />
               </div>
+
+              {/* Fixed label + connector overlay */}
+              <HoverNameDisplay
+                ref={labelBoxRef}
+                title={hoveredDetail?.id ? bookTitleMap[hoveredDetail.id] : ''}
+                side="right"
+                topVh={25}
+                leftPercent={65}
+                visible={!!hoveredDetail && !isMobile}
+              />
+              <HoverConnector
+                tileEl={hoveredDetail?.el ?? null}
+                labelEl={labelBoxRef.current}
+                side="right"
+                elbowGap={32}
+                color="#111"
+                width={2}
+                snapToIso45={true}
+                angleSign={-1}
+                visible={!!hoveredDetail && !isMobile}
+              />
             </div>
           } 
         />

@@ -11,6 +11,11 @@ interface IsometricGridProps {
   rowStartingColOffsets: number[];
   hoveredStampId: number | null;
   onStampHover: (id: number | null) => void;
+  /**
+   * Optional richer hover callback so parents can derive geometry.
+   * Sends the hovered stamp id and the hovered cell element.
+   */
+  onCellHover?: (info: { id: number; el: HTMLElement } | null) => void;
   onHeightCalculated?: (height: number) => void;
   onStampClick: (id: number) => void;
 }
@@ -34,6 +39,7 @@ export const IsometricGrid: React.FC<IsometricGridProps> = ({
   rowStartingColOffsets,
   hoveredStampId,
   onStampHover,
+  onCellHover,
   onHeightCalculated,
   onStampClick
 }) => {
@@ -115,8 +121,16 @@ export const IsometricGrid: React.FC<IsometricGridProps> = ({
                 opacity: cell.stamp ? 0 : 0,
                 transform: 'scale(0.8)'
               }}
-              onMouseEnter={() => cell.stamp && onStampHover(cell.stamp.id)}
-              onMouseLeave={() => onStampHover(null)}
+              onMouseEnter={(e) => {
+                if (cell.stamp) {
+                  onStampHover(cell.stamp.id);
+                  if (onCellHover) onCellHover({ id: cell.stamp.id, el: e.currentTarget as HTMLElement });
+                }
+              }}
+              onMouseLeave={() => {
+                onStampHover(null);
+                if (onCellHover) onCellHover(null);
+              }}
               onClick={() => cell.stamp && onStampClick(cell.stamp.id)}
             >
               {cell.stamp ? (
