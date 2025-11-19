@@ -815,6 +815,8 @@ body {
   width: 100%;         /* ensure full width within grid */
   min-width: 0;        /* prevent grid min-content shrink with search */
   justify-self: stretch;
+  box-sizing: border-box; /* include padding in width calc */
+  display: block;
 }
 
 .library-row {
