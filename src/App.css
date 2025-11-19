@@ -913,3 +913,31 @@ body {
   background: #f0f0f0;
 }
 
+
+/* ===== Overrides: Stabilize LibraryList layout (prevent right column shrink) ===== */
+.library-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/* Left preview never shrinks; set width to match visual frame */
+.library-preview {
+  flex-shrink: 0;
+  width: 320px;
+}
+
+/* Right column gets a fixed, responsive width independent of content */
+.library-list {
+  width: clamp(600px, 55vw, 900px);
+  flex: 0 0 clamp(600px, 55vw, 900px);
+}
+
+/* Children fill the column width */
+.library-search,
+.library-search input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
