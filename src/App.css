@@ -739,7 +739,7 @@ body {
 /* ===== Library (A–Z List) ===== */
 .library-container {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 320px minmax(0, 1fr); /* prevent right column shrink */
   gap: 0; /* flush preview to list */
   padding: 24px;
   max-width: 1200px;
@@ -813,6 +813,7 @@ body {
   font-size: 12px;
   width: 100%;         /* ensure full width within grid */
   min-width: 0;        /* prevent grid min-content shrink with search */
+  justify-self: stretch;
 }
 
 .library-row {
@@ -873,11 +874,11 @@ body {
   align-items: center;
   gap: 8px;
   margin: 0 0 12px;
+  width: 100%;
 }
 
 .library-search input {
   width: 100%;
-  max-width: 520px;
   padding: 6px 10px;
   border: 1px solid #cfcfcf;
   border-radius: 4px;
