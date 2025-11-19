@@ -811,6 +811,8 @@ body {
   padding-left: 24px;  /* 0.25\" margins */
   padding-right: 24px;
   font-size: 12px;
+  width: 100%;         /* ensure full width within grid */
+  min-width: 0;        /* prevent grid min-content shrink with search */
 }
 
 .library-row {
@@ -831,6 +833,7 @@ body {
   align-items: baseline;
   padding: 6px 0; /* tighter vertical rhythm for smaller type */
   border-bottom: 2px solid #111; /* nearly black separators within the margins */
+  width: 100%;
 }
 
 .library-row:first-child .library-row-inner { border-top: 2px solid #111; }
@@ -880,16 +883,24 @@ body {
   border-radius: 4px;
   background: #fff;
   font-size: 12px;
+  font-family: "Shippori Mincho B1", serif; /* match site serif */
+  height: 32px;
 }
 
 .library-search-clear {
-  padding: 2px 8px;
-  font-size: 14px;
-  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 32px;
   border: 1px solid #cfcfcf;
   background: #fafafa;
   border-radius: 4px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Shippori Mincho B1", serif;
 }
 .library-search-clear:hover {
   background: #f0f0f0;
