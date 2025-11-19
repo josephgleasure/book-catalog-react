@@ -156,7 +156,8 @@ const Downloads = () => {
             }}
           >
             <div style={{ 
-              fontWeight: '600', 
+              fontWeight: '700', 
+              fontSynthesis: 'weight',
               fontSize: '1.1rem', 
               marginBottom: '0.5rem',
               color: '#212529'

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Book } from '../data/books';
 
 interface SidebarProps {
@@ -8,6 +8,7 @@ interface SidebarProps {
   onStampHover: (id: number | null) => void;
   hoveredStampId: number | null;
   onStampClick: (id: number) => void;
+  isCollapsed: boolean;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -16,35 +17,12 @@ const Sidebar: React.FC<SidebarProps> = ({
   stamps,
   onStampHover,
   hoveredStampId,
-  onStampClick
+  onStampClick,
+  isCollapsed
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
     <>
-      <button
-        id="toggle-sidebar"
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        className="sidebar-button"
-        style={{
-          width: '180px',
-          height: '40px',
-          textAlign: 'left',
-          position: 'fixed',
-          top: '26px',
-          right: '20px',
-          zIndex: 1001,
-          padding: '8px 12px',
-          background: '#444',
-          color: 'white',
-          border: 'none',
-          cursor: 'pointer',
-          fontSize: '14px',
-          borderRadius: '4px',
-        }}
-      >
-        Show Books
-      </button>
       <div
         className="sidebar"
         style={{
@@ -57,8 +35,8 @@ const Sidebar: React.FC<SidebarProps> = ({
           background: '#ffffffcc',
           border: '1px solid #ccc',
           padding: '10px',
-          fontFamily: 'Helvetica, Arial, sans-serif',
-          fontSize: '14px',
+          fontFamily: 'inherit',
+          fontSize: '12px',
           maxHeight: '80vh',
           overflowY: 'auto',
           boxShadow: '0 0 10px rgba(0,0,0,0.1)',
@@ -72,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           type="text"
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}
-          style={{ width: '95%', marginBottom: '10px', padding: '5px' }}
+          style={{ width: '95%', marginBottom: '10px', padding: '5px', fontFamily: 'inherit' }}
         />
         <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
           {stamps.map((stamp) => (

@@ -151,6 +151,7 @@ const App: React.FC = () => {
   const [gridVisibleHeight, setGridVisibleHeight] = useState(0);
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const labelBoxRef = useRef<HTMLDivElement | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState<boolean>(() => typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
   useEffect(() => {
     const onResize = () => setIsMobile(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
@@ -232,7 +233,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Header />
+      <Header onToggleSidebar={() => setIsSidebarOpen(prev => !prev)} isSidebarOpen={isSidebarOpen} />
       <Routes>
         {/* Default Page (Sidebar + Grid) */}
         <Route 
@@ -240,6 +241,7 @@ const App: React.FC = () => {
           element={
             <div className="main-layout">
               <Sidebar
+                isCollapsed={!isSidebarOpen}
                 search={search}
                 onSearchChange={setSearch}
                 stamps={sidebarFilteredStamps}
