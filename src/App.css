@@ -828,8 +828,9 @@ body {
 
 .library-row-inner {
   display: grid;
-  /* number | title (caps at ~52%) | year (~7ch) | author (auto, never truncated) */
-  grid-template-columns: 4ch minmax(0, 52%) 7ch auto;
+  /* Fill the full width using fractional tracks so rows don't shrink the column */
+  /* number | title | year | author */
+  grid-template-columns: 4ch minmax(0, 1fr) 7ch 1fr;
   gap: 16px;
   align-items: baseline;
   padding: 6px 0; /* tighter vertical rhythm for smaller type */
@@ -861,7 +862,7 @@ body {
 .library-col-num { color: #111; }
 .library-col-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .library-col-year { text-align: right; justify-self: end; }
-.library-col-author { overflow: visible; text-overflow: clip; white-space: nowrap; text-align: right; }
+.library-col-author { overflow: visible; text-overflow: clip; white-space: nowrap; text-align: right; justify-self: end; }
 
 /* Give the page a slight offset from the header */
 .library-container {
