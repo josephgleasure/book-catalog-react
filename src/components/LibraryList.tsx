@@ -27,6 +27,7 @@ function getGridThumbnailUrl(id: number): string {
 
 const LibraryList: React.FC = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [query, setQuery] = useState<string>('');
 
   const books: LibraryBook[] = (booksData as LibraryBook[])
     .filter(b => String(b.title).toLowerCase() !== 'coming soon');
@@ -35,6 +36,25 @@ const LibraryList: React.FC = () => {
     () => [...books].sort((a, b) => a.title.localeCompare(b.title)),
     [books]
   );
+
+  const tokens = useMemo(
+    () => query.toLowerCase().trim().split(/\s+/).filter(Boolean),
+    [query]
+  );
+
+  const filteredBooks = useMemo(() => {
+    if (tokens.length === 0) return sortedBooks;
+    return sortedBooks.filter(b => {
+      const haystack = [
+        b.title,
+        b.author,
+        (b as any).description ?? '',
+        b.isbn ?? '',
+        String(b.publicationYear),
+      ].join(' ').toLowerCase();
+      return tokens.every(t => haystack.includes(t));
+    });
+  }, [sortedBooks, tokens]);
 
   const hoveredCover = useMemo(() => {
     if (!hoveredId) return null;
@@ -74,7 +94,27 @@ const LibraryList: React.FC = () => {
         })()}
       </aside>
       <main className="library-list" onMouseLeave={() => setHoveredId(null)}>
-        {sortedBooks.map((b, idx) => {
+        <div className="library-search">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search title, author, year, ISBN, description…"
+            aria-label="Search library"
+          />
+          {query && (
+            <button
+              type="button"
+              className="library-search-clear"
+              aria-label="Clear search"
+              onClick={() => setQuery('')}
+              title="Clear"
+            >
+              ×
+            </button>
+          )}
+        </div>
+        {filteredBooks.map((b, idx) => {
           const isbn = b.isbn ? String(b.isbn) : 'n/a';
           const displayIndex = `#${idx + 1}`;
           const rawFirst = (b.author || '').split('&')[0].split(',')[0].trim();

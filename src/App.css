@@ -859,3 +859,39 @@ body {
 .library-col-year { text-align: right; justify-self: end; }
 .library-col-author { overflow: visible; text-overflow: clip; white-space: nowrap; text-align: right; }
 
+/* Give the page a slight offset from the header */
+.library-container {
+  margin-top: 16px;
+}
+
+/* Search bar above the list */
+.library-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.library-search input {
+  width: 100%;
+  max-width: 520px;
+  padding: 6px 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 12px;
+}
+
+.library-search-clear {
+  padding: 2px 8px;
+  font-size: 14px;
+  line-height: 1;
+  border: 1px solid #cfcfcf;
+  background: #fafafa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.library-search-clear:hover {
+  background: #f0f0f0;
+}
+
