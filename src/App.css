@@ -739,7 +739,8 @@ body {
 /* ===== Library (A–Z List) ===== */
 .library-container {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr); /* prevent right column shrink */
+  /* Force the right column to always occupy the remaining space explicitly */
+  grid-template-columns: 320px calc(100% - 320px);
   gap: 0; /* flush preview to list */
   padding: 24px;
   max-width: 1200px;
