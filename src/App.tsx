@@ -12,6 +12,7 @@ import AboutPage from './components/AboutPage';
 import Downloads from './components/Downloads';
 import HoverNameDisplay from './components/HoverNameDisplay';
 import HoverConnector from './components/HoverConnector';
+import LibraryList from './components/LibraryList';
 
 // Create a map of stamp IDs to book titles
 const bookTitleMap: Record<number, string> = {};
@@ -294,6 +295,7 @@ const App: React.FC = () => {
         {/* About Page */}
         <Route path="/about" element={<AboutPage />} />
         <Route path="/downloads" element={<Downloads />} />
+        <Route path="/library" element={<LibraryList />} />
       </Routes>
       <div className="footer-container">
         <footer className="footer">
