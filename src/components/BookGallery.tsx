@@ -144,7 +144,7 @@ const BookGallery: React.FC<BookGalleryProps> = ({ bookTitle, currentIndex, onIn
         <div className="thumb-toggle">
           <button
             onClick={() => setShowThumbnails(v => !v)}
-            style={{ padding: '6px 10px', border: '1px solid #ccc', borderRadius: 6, background: showThumbnails ? '#f0f0f0' : '#fff', cursor: 'pointer' }}
+            style={{ padding: '6px 10px', border: '1px solid #ccc', borderRadius: 6, background: showThumbnails ? '#f0f0f0' : '#fff', cursor: 'pointer', fontSize: '14px' }}
           >{showThumbnails ? 'Close Gallery' : 'Browse Thumbnail Gallery'}</button>
         </div>
       )}
