@@ -40,6 +40,9 @@ const LibraryPage: React.FC = () => {
     const nextQs = new URLSearchParams(searchParams);
     // remove legacy query param to avoid duplication
     nextQs.delete('book');
+    // strip default params
+    if (!nextQs.get('q')) nextQs.delete('q');
+    if (nextQs.get('page') === '1') nextQs.delete('page');
     const qsString = nextQs.toString();
     const nextUrl = qsString ? `/library/${s}-${id}?${qsString}` : `/library/${s}-${id}`;
     navigate(nextUrl);
@@ -48,6 +51,9 @@ const LibraryPage: React.FC = () => {
   const handleClose = () => {
     const next = new URLSearchParams(searchParams);
     next.delete('book'); // strip legacy param if present
+    // strip default params
+    if (!next.get('q')) next.delete('q');
+    if (next.get('page') === '1') next.delete('page');
     const qsString = next.toString();
     const dest = qsString ? `/library?${qsString}` : '/library';
     navigate(dest);

@@ -127,9 +127,13 @@ const LibraryList: React.FC<LibraryListProps> = ({ onOpenBook }) => {
             onChange={(e) => {
               const nextQ = e.target.value;
               const next = new URLSearchParams(searchParams);
-              next.set('q', nextQ);
-              // Reset to page 1 when query changes
-              next.set('page', '1');
+              if (nextQ) {
+                next.set('q', nextQ);
+              } else {
+                next.delete('q');
+              }
+              // Reset to first page implicitly by removing the page param
+              next.delete('page');
               setSearchParams(next);
             }}
             placeholder="Search title, author, year, ISBN, description…"
@@ -142,8 +146,8 @@ const LibraryList: React.FC<LibraryListProps> = ({ onOpenBook }) => {
               aria-label="Clear search"
               onClick={() => {
                 const next = new URLSearchParams(searchParams);
-                next.set('q', '');
-                next.set('page', '1');
+                next.delete('q');
+                next.delete('page');
                 setSearchParams(next);
               }}
               title="Clear"
@@ -222,8 +226,13 @@ const LibraryList: React.FC<LibraryListProps> = ({ onOpenBook }) => {
             <button
               type="button"
               onClick={() => {
+                const newPage = Math.max(1, clampedPage - 1);
                 const next = new URLSearchParams(searchParams);
-                next.set('page', String(Math.max(1, clampedPage - 1)));
+                if (newPage > 1) {
+                  next.set('page', String(newPage));
+                } else {
+                  next.delete('page');
+                }
                 setSearchParams(next);
               }}
               disabled={clampedPage === 1}
@@ -237,8 +246,13 @@ const LibraryList: React.FC<LibraryListProps> = ({ onOpenBook }) => {
             <button
               type="button"
               onClick={() => {
+                const newPage = Math.min(pageCount, clampedPage + 1);
                 const next = new URLSearchParams(searchParams);
-                next.set('page', String(Math.min(pageCount, clampedPage + 1)));
+                if (newPage > 1) {
+                  next.set('page', String(newPage));
+                } else {
+                  next.delete('page');
+                }
                 setSearchParams(next);
               }}
               disabled={clampedPage === pageCount}
