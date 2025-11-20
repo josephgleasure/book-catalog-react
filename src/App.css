@@ -825,7 +825,7 @@ body {
   border: 0;
   margin: 0; /* no gaps between rows */
   padding: 0;
-  cursor: default;
+  cursor: pointer;
   transition: background 0.15s ease;
 }
 
@@ -911,6 +911,40 @@ body {
 }
 .library-search-clear:hover {
   background: #f0f0f0;
+}
+
+/* Results meta line */
+.library-meta {
+  margin: 8px 0 10px;
+  color: #555;
+  font-size: 12px;
+}
+
+/* Pagination */
+.library-pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 0;
+}
+.library-pagination button {
+  height: 28px;
+  padding: 0 10px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.library-pagination button:hover { background-color: rgba(0,0,0,0.08); }
+.library-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.library-page-indicator {
+  color: #333;
+  font-size: 12px;
 }
 
 
