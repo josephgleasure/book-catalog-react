@@ -1,14 +1,21 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import LibraryList from './LibraryList';
 import BookPopup from './BookPopup';
 import { findBookById } from '../data/books';
+import { slugifyTitle } from '../utils/slug';
 
 const LibraryPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const { slug } = useParams();
   const [lastFocusedEl, setLastFocusedEl] = useState<HTMLElement | null>(null);
+
+  // Support either /library/:slug (preferred) or ?book=ID (back-compat)
+  const slugId = slug ? parseInt(slug.match(/-(\d+)$/)?.[1] || '', 10) : NaN;
   const bookParam = searchParams.get('book');
-  const bookId = bookParam ? parseInt(bookParam, 10) : NaN;
+  const queryId = bookParam ? parseInt(bookParam, 10) : NaN;
+  const bookId = Number.isFinite(slugId) ? slugId : queryId;
 
   const book = useMemo(() => {
     if (!Number.isFinite(bookId)) return null;
@@ -28,15 +35,22 @@ const LibraryPage: React.FC = () => {
     } else {
       setLastFocusedEl(null);
     }
-    const next = new URLSearchParams(searchParams);
-    next.set('book', String(id));
-    setSearchParams(next);
+    const found = findBookById(id);
+    const s = found ? slugifyTitle(found.title) : 'book';
+    const nextQs = new URLSearchParams(searchParams);
+    // remove legacy query param to avoid duplication
+    nextQs.delete('book');
+    const qsString = nextQs.toString();
+    const nextUrl = qsString ? `/library/${s}-${id}?${qsString}` : `/library/${s}-${id}`;
+    navigate(nextUrl);
   };
 
   const handleClose = () => {
     const next = new URLSearchParams(searchParams);
-    next.delete('book');
-    setSearchParams(next);
+    next.delete('book'); // strip legacy param if present
+    const qsString = next.toString();
+    const dest = qsString ? `/library?${qsString}` : '/library';
+    navigate(dest);
     // restore focus after URL updates
     setTimeout(() => {
       if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {

@@ -297,6 +297,7 @@ const App: React.FC = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/downloads" element={<Downloads />} />
         <Route path="/library" element={<LibraryPage />} />
+        <Route path="/library/:slug" element={<LibraryPage />} />
       </Routes>
       <div className="footer-container">
         <footer className="footer">
