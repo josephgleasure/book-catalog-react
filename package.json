@@ -11,6 +11,7 @@
     "generate:manifest": "node scripts/generate-image-manifest.mjs"
   },
   "dependencies": {
+    "@tanstack/react-virtual": "^3.0.0",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
     "react": "^19.1.0",
