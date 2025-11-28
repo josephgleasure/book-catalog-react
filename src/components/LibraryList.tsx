@@ -23,7 +23,8 @@ function getGridThumbnailUrl(id: number): string {
   try {
     return new URL(`../assets/thumbnails/${id}.jpg`, import.meta.url).href;
   } catch {
-    return new URL(`../assets/thumbnails/fallback.jpg`, import.meta.url).href;
+    // Use a public asset that always exists in both dev and prod
+    return '/vite.svg';
   }
 }
 

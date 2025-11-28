@@ -30,7 +30,7 @@ const getStampUrl = (id: number) => {
     return new URL(`../assets/thumbnails/${id}.jpg`, import.meta.url).href;
   } catch {
     // Fallback if the above fails (e.g., missing file)
-    return new URL(`../assets/thumbnails/fallback.jpg`, import.meta.url).href;
+    return '/vite.svg';
   }
 };
 
