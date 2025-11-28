@@ -63,6 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               style={{
                 padding: '6px 8px',
                 transition: 'background-color 0.3s',
+                cursor: 'pointer',
                 backgroundColor: hoveredStampId === stamp.id ? '#ff0000' : 'transparent',
                 color: hoveredStampId === stamp.id ? 'white' : 'inherit',
                 fontWeight: hoveredStampId === stamp.id ? 'bold' : 'normal',

@@ -13,9 +13,9 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, isSidebarOpen }) => {
       <div className="site-title">archive.process</div>
       <nav className="site-nav">
         <Link to="/">Home</Link>
+        <Link to="/library">Library</Link>
         <Link to="/about">About</Link>
         <Link to="/downloads">Downloads</Link>
-        <Link to="/library">Library</Link>
       </nav>
       <div className="site-actions">
         {!isLibrary && (
